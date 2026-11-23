@@ -1,0 +1,121 @@
+/* =========================================================
+   Palette ricavata dal quadro (teoria dei colori)
+   - Base analoga calda: terra d'ombra, ocra, pietra e il rosso
+     del mantello del padre (tinte tra 10° e 40° sul cerchio cromatico).
+   - Accento complementare: il blu dei dati (circa 215°), opposto
+     all'ocra. Nel quadro è l'unico colore che rompe la tavolozza
+     di David, e nel sito vale lo stesso: si usa solo per i "dati".
+   ========================================================= */
+:root{
+  --umber:#15110d;      /* sfondo: ombra profonda del quadro */
+  --umber-2:#1f1913;
+  --stone:#a89678;      /* pietra degli archi (testo secondario) */
+  --parchment:#efe5d2;  /* luce sui corpi (testo principale) */
+  --ochre:#c8964f;      /* accento principale, analogo */
+  --red:#b5432f;        /* rosso del mantello, usato pochissimo */
+  --data:#5aaef0;       /* complementare: il blu dei dati */
+
+  --card:rgba(21,17,13,.84);
+  --line:rgba(200,150,79,.2);
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--umber);color:var(--parchment);font:400 16.5px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--ochre);color:var(--umber)}
+
+/* ---------- il palcoscenico fisso ---------- */
+.stage{position:fixed;inset:0;overflow:hidden;background:radial-gradient(ellipse at 55% 45%,var(--umber-2) 0%,var(--umber) 75%)}
+.art{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform,opacity;user-select:none;-webkit-user-drag:none;display:block}
+#art-orig{width:2000px;height:1551px}
+#art-new{width:1448px;height:1086px}
+.vignette{position:absolute;inset:0;pointer-events:none}
+
+/* freccia + etichetta */
+.pointer{position:absolute;left:0;top:0;width:0;height:0;pointer-events:none;will-change:transform}
+.pointer svg{position:absolute;left:-10px;top:-78px;overflow:visible;transform-origin:10px 78px}
+.pointer.nw svg{transform:scale(-1,1)}
+.pointer.se svg{transform:scale(1,-1)}
+.pointer.sw svg{transform:scale(-1,-1)}
+.pointer path{fill:none;stroke:var(--ochre);stroke-width:2;stroke-linecap:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.9))}
+.pointer .curve{stroke-dasharray:150;stroke-dashoffset:150}
+.pointer .tag{position:absolute;left:98px;bottom:64px;min-width:170px;padding:9px 14px 10px;background:var(--card);
+  border-left:2px solid var(--ochre);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0}
+.pointer.nw .tag{left:auto;right:98px;border-left:0;border-right:2px solid var(--ochre);text-align:right}
+.pointer.se .tag{bottom:auto;top:64px}
+.pointer.sw .tag{left:auto;right:98px;bottom:auto;top:64px;border-left:0;border-right:2px solid var(--ochre);text-align:right}
+.tag b{display:block;font:500 23px/1.1 var(--serif);color:#fff;white-space:nowrap}
+.tag i{display:block;font:400 10.5px/1.4 var(--sans);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);white-space:nowrap;margin-top:3px}
+
+/* ---------- testi che scorrono sopra il quadro ---------- */
+main{position:relative;z-index:2}
+.step{min-height:110vh;display:flex;align-items:center;padding:12vh 0 12vh 5vw}
+.step.tall{min-height:150vh}
+.card{width:min(430px,36vw);background:var(--card);border:1px solid var(--line);padding:32px 34px 30px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.step.is-active .card,.step.is-active .overlay{opacity:1;transform:none}
+
+.num{margin:0 0 14px;font:500 11px/1.3 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ochre)}
+h1,h2{margin:0;font-family:var(--serif);font-weight:500;color:#fff;letter-spacing:-.01em}
+h2{font-size:clamp(32px,2.9vw,44px);line-height:1.05}
+.role{margin:8px 0 0;font-size:13.5px;color:var(--stone)}
+h3{margin:24px 0 5px;font:500 10.5px/1.3 var(--sans);letter-spacing:.17em;text-transform:uppercase;color:var(--stone)}
+p{margin:0 0 13px}
+p:last-child{margin-bottom:0}
+.lead{font:500 21px/1.45 var(--serif);color:#f6efe2;margin-top:18px}
+strong{color:#fff;font-weight:500}
+.data{color:var(--data)}
+ul{margin:0;padding:0;list-style:none}
+li{position:relative;padding-left:18px;margin:0 0 9px}
+li::before{content:"–";position:absolute;left:0;color:var(--ochre)}
+.stat{display:flex;gap:16px;align-items:baseline;margin:8px 0 12px}
+.stat b{font:500 40px/1 var(--serif);color:var(--data);flex:none;min-width:2.1em}
+.stat span{font-size:14.5px;line-height:1.5;color:#d8ccb7}
+.swap{border-collapse:collapse;margin-top:16px;width:100%;font-size:15px}
+.swap td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.swap td:first-child{color:var(--stone);width:44%}
+.swap td:nth-child(2){color:var(--ochre);width:10%}
+.swap a{color:var(--parchment);text-decoration:none}
+.swap a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+details{margin-top:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+summary{cursor:pointer;padding:11px 0;font-size:13px;color:var(--ochre);list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ "}
+details[open] summary::before{content:"– "}
+details pre{margin:0 0 14px;white-space:pre-wrap;font:400 11.5px/1.6 ui-monospace,Consolas,monospace;color:#c4b8a3;max-height:44vh;overflow:auto}
+
+/* titoli sopra il quadro (inizio, trasformazione, fine) */
+.step.center{justify-content:center;align-items:flex-end;padding:0 6vw 7vh;text-align:center}
+.overlay{max-width:820px;padding:30px 40px;opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1);
+  background:radial-gradient(ellipse at center,rgba(21,17,13,.82) 0%,rgba(21,17,13,.55) 55%,rgba(21,17,13,0) 75%)}
+.overlay .num{margin-bottom:10px}
+.overlay h1{font-size:clamp(46px,6.6vw,96px);line-height:.95;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.overlay h1 em{color:var(--data);font-style:italic}
+.overlay p{font:500 clamp(18px,1.7vw,23px)/1.4 var(--serif);font-style:italic;color:#efe3cc;margin:14px auto 0;max-width:620px;text-shadow:0 2px 12px #000}
+.hint{display:inline-block;margin-top:22px;font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.hint::after{content:"";display:block;width:1px;height:34px;margin:10px auto 0;background:linear-gradient(var(--ochre),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%,100%{opacity:.2;transform:scaleY(.4);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+blockquote{margin:0;font:500 clamp(30px,4vw,54px)/1.12 var(--serif);font-style:italic;color:#fff;text-shadow:0 3px 24px #000}
+blockquote .data{font-style:italic}
+
+footer{position:relative;z-index:2;text-align:center;padding:30px 6vw 50px;font-size:12px;color:var(--stone);background:linear-gradient(transparent,var(--umber) 45%)}
+
+/* ---------- telefono ---------- */
+@media (max-width:820px){
+  body{font-size:16px}
+  .step{align-items:flex-end;padding:60vh 4vw 8vh;min-height:125vh}
+  .card{width:100%;padding:24px 22px}
+  .step.center{padding:0 4vw 6vh;min-height:100vh}
+  .step.center.tall{min-height:140vh}
+  .overlay{padding:20px 14px}
+  .pointer .tag{left:80px;bottom:60px;min-width:0;padding:7px 11px}
+  .pointer.nw .tag,.pointer.sw .tag{right:80px}
+  .pointer.se .tag,.pointer.sw .tag{top:60px}
+  .tag b{font-size:19px}
+}
+@media (prefers-reduced-motion:reduce){
+  .card,.overlay{transition:none}
+  .hint::after{animation:none}
+}

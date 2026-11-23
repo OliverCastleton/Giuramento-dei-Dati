@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il giuramento dei dati</title>
+<meta name="description" content="Rilettura del Giuramento degli Orazi di Jacques-Louis David: da un giuramento per la patria a un patto sul controllo dei dati personali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Il quadro resta fisso: lo scroll muove la "telecamera" -->
+<div class="stage" aria-hidden="true">
+  <img class="art" id="art-orig" src="img/orazi-david.jpg" alt="">
+  <img class="art" id="art-new" src="img/giuramento-dei-dati.webp" alt="" style="opacity:0">
+  <div class="vignette"></div>
+  <div class="pointer">
+    <svg width="120" height="90" viewBox="0 0 120 90">
+      <path class="curve" d="M112 6 C 70 6, 30 30, 10 78"/>
+      <path class="head" d="M6 62 L10 78 L23 70"/>
+    </svg>
+    <div class="tag"><b></b><i></i></div>
+  </div>
+</div>
+
+<main>
+
+  <!-- ===================== L'OPERA ORIGINALE ===================== -->
+
+  <section class="step center" data-img="orig" data-mode="hero">
+    <div class="overlay">
+      <p class="num">Jacques-Louis David · 1784</p>
+      <h1>Il giuramento<br>degli Orazi</h1>
+      <span class="hint">Scorri</span>
+    </div>
+  </section>
+
+  <section class="step" data-img="orig" data-mode="full">
+    <article class="card">
+      <p class="num">L'opera originale</p>
+      <h2>Vincere o morire</h2>
+      <p class="lead">Un episodio della storia di Roma raccontato da Tito Livio.</p>
+      <p>Per decidere la guerra tra Roma e Alba Longa, i tre fratelli romani <strong>Orazi</strong> devono combattere contro i tre fratelli albani <strong>Curiazi</strong>.</p>
+      <p>David sceglie il momento che precede lo scontro: i tre fratelli giurano al padre di vincere o morire, mentre lui tiene in alto le spade.</p>
+    </article>
+  </section>
+
+  <section class="step" data-img="orig" data-mode="full">
+    <article class="card">
+      <p class="num">La composizione</p>
+      <h2>Ragione e sentimento</h2>
+      <p style="margin-top:16px">Tre grandi archi dividono la scena in tre gruppi: i fratelli a sinistra, il padre al centro, le donne a destra.</p>
+      <p>Gli uomini sono tesi, geometrici, in piena luce. Le donne sono piegate, morbide, in penombra: piangono perché sono legate a entrambe le famiglie, e comunque vada qualcuno che amano morirà.</p>
+      <h3>Il messaggio</h3>
+      <p>Tipico del Neoclassicismo: la <strong>virtù civica</strong>. L'individuo mette da parte gli affetti per il bene della collettività. Alla vigilia della Rivoluzione francese l'opera divenne un simbolo degli ideali repubblicani.</p>
+    </article>
+  </section>
+
+  <!-- ===================== LA TRASFORMAZIONE ===================== -->
+
+  <section class="step center tall" data-img="new" data-mode="hero">
+    <div class="overlay">
+      <p class="num">Io l'ho fatta diventare questa</p>
+      <h1>Il giuramento<br>dei <em>dati</em></h1>
+      <p>Da un giuramento di sacrificio per la patria a un patto sul controllo dei dati personali.</p>
+    </div>
+  </section>
+
+  <section class="step" data-img="new" data-mode="full">
+    <article class="card">
+      <p class="num">Introduzione</p>
+      <h2>Un patto, non un sacrificio</h2>
+      <p style="margin-top:16px">Ho sostituito i protagonisti con alcune figure di potere del mondo politico e tecnologico, le spade con i <span class="data">dati</span> degli utenti e la famiglia in lutto con una famiglia di oggi, distratta dagli smartphone.</p>
+      <p>L'opera diventa una <strong>protesta per la privacy</strong>: ciò che oggi cediamo senza accorgercene è il nostro bene più personale, e a chiederlo è un potere che non rende conto a nessuno.</p>
+    </article>
+  </section>
+
+  <section class="step" data-img="new" data-mode="full">
+    <article class="card">
+      <p class="num">Cosa resta, cosa cambia</p>
+      <h2>Le modifiche</h2>
+      <p style="margin-top:16px">Ho mantenuto archi, luce laterale, pittura scura e divisione in due gruppi: è proprio la <strong>struttura a contrasto</strong> a rendere efficace il nuovo significato.</p>
+      <table class="swap">
+        <tr><td>I tre Orazi</td><td>→</td><td><a href="#fratelli">Musk, Altman, Thiel</a></td></tr>
+        <tr><td>Il padre</td><td>→</td><td><a href="#trump">Donald Trump</a></td></tr>
+        <tr><td>Le spade</td><td>→</td><td><a href="#dati">Flussi di dati</a></td></tr>
+        <tr><td>Le donne in lutto</td><td>→</td><td><a href="#famiglia">Una famiglia sugli smartphone</a></td></tr>
+        <tr><td>Aggiunta</td><td>+</td><td><a href="#vdl">Ursula von der Leyen</a></td></tr>
+        <tr><td>Aggiunta</td><td>+</td><td><a href="#termini">“Accetto i termini e condizioni”</a></td></tr>
+      </table>
+    </article>
+  </section>
+
+  <!-- ===================== I DETTAGLI ===================== -->
+
+  <section class="step" id="fratelli" data-img="new" data-mode="focus"
+           data-focus="360,668,300,360" data-anchor="628,426" data-dir="ne" data-name="I tre fratelli" data-sub="Gli Orazi">
+    <article class="card">
+      <p class="num">01 · Il gruppo di sinistra</p>
+      <h2>I tre fratelli</h2>
+      <p class="role">X e xAI · OpenAI e Worldcoin · Palantir</p>
+      <h3>Nell'opera</h3>
+      <p>Al posto degli Orazi ci sono <strong>Elon Musk</strong>, <strong>Sam Altman</strong> e <strong>Peter Thiel</strong>, nella stessa posa eroica con il braccio teso. Rappresentano tre aziende che raccolgono o elaborano enormi quantità di dati personali.</p>
+      <h3>Il gesto</h3>
+      <p>In David i tre corpi si sovrappongono fino a sembrarne uno solo. Qui quella compattezza diventa un <strong>blocco di potere</strong>: aziende diverse che, davanti ai dati, si muovono come una sola.</p>
+    </article>
+  </section>
+
+  <section class="step" id="musk" data-img="new" data-mode="focus"
+           data-focus="222,396,72,76" data-anchor="268,362" data-dir="ne" data-name="Elon Musk" data-sub="X · xAI · Tesla">
+    <article class="card">
+      <p class="num">02 · Il primo fratello</p>
+      <h2>Elon Musk</h2>
+      <p class="role">X · xAI · Tesla · SpaceX</p>
+      <h3>Nell'opera</h3>
+      <p>Il primo dei fratelli, il più vicino a noi, con il braccio più lungo verso il fascio di dati.</p>
+      <h3>Chi è</h3>
+      <p>Imprenditore nato in Sudafrica nel 1971, guida Tesla e SpaceX. Nel 2022 ha comprato Twitter e l'ha trasformato in <strong>X</strong>; nel 2023 ha fondato <strong>xAI</strong>, che sviluppa il chatbot Grok.</p>
+      <h3>Cosa c'entra con i dati</h3>
+      <ul>
+        <li>X raccoglie post, interazioni e preferenze di centinaia di milioni di utenti.</li>
+        <li>Nel 2024 X ha attivato di default l'uso dei post per addestrare Grok; l'autorità irlandese per la privacy è intervenuta per gli utenti europei.</li>
+        <li>Nel 2025 ha guidato il DOGE nell'amministrazione Trump, il cui accesso a banche dati federali è stato contestato in tribunale.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="step" id="altman" data-img="new" data-mode="focus"
+           data-focus="346,427,60,60" data-anchor="384,397" data-dir="ne" data-name="Sam Altman" data-sub="OpenAI · ChatGPT">
+    <article class="card">
+      <p class="num">03 · Il secondo fratello</p>
+      <h2>Sam Altman</h2>
+      <p class="role">OpenAI · ChatGPT · Worldcoin</p>
+      <h3>Nell'opera</h3>
+      <p>Il fratello di mezzo, stretto tra gli altri due, con lo sguardo fisso sul padre.</p>
+      <h3>Chi è</h3>
+      <p>Nato nel 1985, è l'amministratore delegato di <strong>OpenAI</strong>, l'azienda di ChatGPT, usato ogni settimana da centinaia di milioni di persone.</p>
+      <h3>Cosa c'entra con i dati</h3>
+      <ul>
+        <li>I modelli di OpenAI sono addestrati su enormi quantità di testi presi dal web, e le conversazioni degli utenti possono servire a migliorarli.</li>
+        <li>In Italia il Garante della privacy ha bloccato temporaneamente ChatGPT nel 2023 e nel 2024 ha multato OpenAI per <strong>15 milioni di euro</strong>.</li>
+        <li>Ha co-fondato <strong>Worldcoin</strong>, che scansiona l'iride delle persone in cambio di criptovaluta; Spagna, Portogallo e Kenya ne hanno sospeso l'attività.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="step" id="thiel" data-img="new" data-mode="focus"
+           data-focus="435,430,52,56" data-anchor="468,404" data-dir="ne" data-name="Peter Thiel" data-sub="Palantir">
+    <article class="card">
+      <p class="num">04 · Il terzo fratello</p>
+      <h2>Peter Thiel</h2>
+      <p class="role">Palantir · PayPal · primo investitore di Facebook</p>
+      <h3>Nell'opera</h3>
+      <p>L'ultimo dei tre, il più in ombra: come il suo potere, meno visibile ma forse il più profondo.</p>
+      <h3>Chi è</h3>
+      <p>Investitore nato in Germania nel 1967. Ha co-fondato PayPal, è stato il primo finanziatore esterno di Facebook e nel 2003 ha co-fondato <strong>Palantir</strong>.</p>
+      <h3>Cosa c'entra con i dati</h3>
+      <ul>
+        <li>Palantir prende il nome dalle pietre veggenti del <em>Signore degli Anelli</em>, che permettono di vedere tutto. Il suo software unisce e analizza dati per servizi segreti, eserciti, polizie e sistemi sanitari.</li>
+        <li>Sostiene Trump dal 2016 e ha finanziato la carriera politica dell'attuale vicepresidente J.D. Vance.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="step" id="trump" data-img="new" data-mode="focus"
+           data-focus="843,436,64,64" data-anchor="884,400" data-dir="ne" data-name="Donald Trump" data-sub="Il padre">
+    <article class="card">
+      <p class="num">05 · Il padre</p>
+      <h2>Donald Trump</h2>
+      <p class="role">Presidente degli Stati Uniti</p>
+      <h3>Nell'opera</h3>
+      <p>Al centro, con in mano il fascio di “spade”: simbolo del <strong>potere politico che si allea con quello tecnologico</strong> e che può decidere come i dati vengono usati.</p>
+      <p>Nell'originale il padre è l'autorità che consegna le armi e riceve il giuramento: lo Stato. La cravatta rossa riprende il mantello rosso del padre di David.</p>
+      <h3>Chi è</h3>
+      <p>Nato a New York nel 1946, presidente degli Stati Uniti dal 2017 al 2021 e di nuovo dal gennaio 2025.</p>
+      <h3>Cosa c'entra con i dati</h3>
+      <ul>
+        <li>Al suo secondo insediamento, nel gennaio 2025, in prima fila c'erano i capi delle grandi aziende tecnologiche, tra cui Musk, Zuckerberg e Bezos.</li>
+        <li>Il giorno dopo ha annunciato con Altman il progetto <strong>Stargate</strong>: fino a 500 miliardi di dollari per l'intelligenza artificiale.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="step" id="dati" data-img="new" data-mode="focus"
+           data-focus="706,272,118,212" data-anchor="792,150" data-dir="ne" data-name="Le spade" data-sub="profili · impronte · cavi">
+    <article class="card">
+      <p class="num">06 · Le spade</p>
+      <h2>Le spade sono <span class="data">dati</span></h2>
+      <h3>Nell'opera</h3>
+      <p>Le armi sono diventate <strong>flussi luminosi di dati</strong>: cavi legati da un anello come le spade di David, da cui escono profili, impronte digitali e documenti.</p>
+      <p>Nell'originale le spade servono a combattere; qui i dati sono l'arma con cui si esercita <strong>controllo</strong>: permettono di prevedere, influenzare e orientare i comportamenti, dalle scelte di consumo alle opinioni politiche.</p>
+      <p>Il blu è l'unico colore che rompe la tavolozza di David.</p>
+      <h3>Un esempio reale</h3>
+      <div class="stat"><b>87 mln</b><span>gli utenti Facebook i cui dati finirono a Cambridge Analytica, che li usò per la propaganda politica mirata (2018).</span></div>
+    </article>
+  </section>
+
+  <section class="step" id="famiglia" data-img="new" data-mode="focus"
+           data-focus="1160,796,285,228" data-anchor="1232,598" data-dir="nw" data-name="La famiglia" data-sub="Le donne in lutto">
+    <article class="card">
+      <p class="num">07 · Il gruppo di destra</p>
+      <h2>La famiglia</h2>
+      <h3>Nell'originale</h3>
+      <p>Le donne piangono perché sono legate a entrambe le famiglie: una è sposa di un Orazio e sorella dei Curiazi, l'altra è promessa a un Curiazio.</p>
+      <h3>Nella mia versione</h3>
+      <p>Una famiglia di oggi (una madre, un bambino, una nonna) con il volto chino sugli smartphone. Come nel dipinto <strong>subisce le conseguenze di un patto che non ha deciso</strong>, ma qui non sa nemmeno che esiste.</p>
+      <p>L'unica luce è quella degli schermi: la tecnologia che dovrebbe dare libertà è la stessa che la distrae.</p>
+    </article>
+  </section>
+
+  <section class="step" id="vdl" data-img="new" data-mode="focus"
+           data-focus="1080,474,52,108" data-anchor="1110,398" data-dir="ne" data-name="Ursula von der Leyen" data-sub="Nell'ombra">
+    <article class="card">
+      <p class="num">08 · Aggiunta</p>
+      <h2>Ursula von der Leyen</h2>
+      <p class="role">Presidente della Commissione europea</p>
+      <h3>Nell'opera</h3>
+      <p>Nell'arco di fondo, nell'ombra, guarda altrove, come se non volesse vedere. Rappresenta le <strong>istituzioni europee</strong>, che dovrebbero tutelare i cittadini: c'è, ma non interviene.</p>
+      <h3>Chi è</h3>
+      <p>Politica tedesca nata a Bruxelles nel 1958, presiede la Commissione europea dal 2019.</p>
+      <h3>Cosa c'entra con i dati</h3>
+      <ul>
+        <li>L'Unione europea ha le leggi sulla privacy più severe al mondo: il <strong>GDPR</strong> (2018) e l'<strong>AI Act</strong> (2024).</li>
+        <li>Eppure, in alcuni casi, le istituzioni sembrano assecondare le grandi aziende: nel 2025 la Commissione ha proposto di “semplificare” alcune regole digitali, scelta criticata dalle associazioni per la privacy.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="step" id="termini" data-img="new" data-mode="focus"
+           data-focus="720,1057,200,30" data-anchor="896,1046" data-dir="ne" data-name="Sul pavimento" data-sub="Aggiunta">
+    <article class="card">
+      <p class="num">09 · Aggiunta</p>
+      <h2>“Accetto i termini e condizioni”</h2>
+      <h3>Nell'opera</h3>
+      <p>La frase con cui ogni giorno cediamo i nostri dati <strong>senza leggerla</strong>. Sta sul pavimento, dove la si calpesta: è il vero giuramento del quadro, ma nessuno la guarda.</p>
+      <p>Il giuramento di David era pubblico, consapevole e solenne. Il nostro è silenzioso: basta un clic su “Accetto” per consegnare posizione, abitudini, immagini e conversazioni.</p>
+      <h3>Qualche numero</h3>
+      <div class="stat"><b>76</b><span>giorni lavorativi all'anno servirebbero per leggere tutte le informative sulla privacy che accettiamo (Carnegie Mellon, 2008).</span></div>
+      <div class="stat"><b>98%</b><span>dei partecipanti a un esperimento ha accettato i termini di un finto social network che chiedevano di cedere il proprio primogenito.</span></div>
+    </article>
+  </section>
+
+  <!-- ===================== IL SENSO ===================== -->
+
+  <section class="step" data-img="new" data-mode="full">
+    <article class="card">
+      <p class="num">Il rapporto si capovolge</p>
+      <h2>Il significato</h2>
+      <p style="margin-top:16px">In David l'individuo si sacrifica per lo Stato. Nella mia versione a essere sacrificata non è la vita privata di chi giura, ma quella di <strong>chi sta a guardare</strong>: i potenti stringono un patto tra loro e il prezzo lo paga la famiglia, che perde la propria privacy.</p>
+      <p>Il contrasto di luce, che in David divideva ragione e sentimento, qui divide <strong>chi sa e chi non sa</strong>. I potenti sono in piena luce; la famiglia è illuminata soltanto dagli schermi.</p>
+      <p>Chi possiede i dati ha un potere che nessun cittadino ha votato.</p>
+    </article>
+  </section>
+
+  <section class="step" id="ironia" data-img="new" data-mode="focus"
+           data-focus="346,427,60,60" data-anchor="384,397" data-dir="ne" data-name="Fatto con ChatGPT" data-sub="OpenAI">
+    <article class="card">
+      <p class="num">L'ironia</p>
+      <h2>Dentro il meccanismo</h2>
+      <p style="margin-top:16px">L'opera è stata generata con <strong>ChatGPT</strong>, uno strumento di OpenAI, cioè dell'azienda di uno dei personaggi raffigurati.</p>
+      <p>Per criticare i sistemi che raccolgono dati ho usato uno di quei sistemi, e scrivendo i prompt anch'io ho ceduto informazioni. I prompt fanno parte dell'opera: mostrano che <strong>nessuno, nemmeno chi critica, riesce a restare del tutto fuori</strong>.</p>
+      <details>
+        <summary>I prompt usati</summary>
+<pre>KEEP identical to the original: the neoclassical oil-painting style, the three Roman arches in the background, the dark austere interior, the strong directional light from the left, the stone floor, and the overall composition. The left group is three men swearing an oath with outstretched arms, facing an older man at the center who holds bundles of swords aloft. The right group is a family of women and children, grieving and huddled together, in a darker, softer light.
+
+CHANGE:
+1. The three men swearing the oath are caricatured portraits of Elon Musk, Sam Altman and Peter Thiel, in dark modern suits, with the same heroic poses and outstretched arms as the original brothers.
+2. The older man at the center is Donald Trump, in a dark suit, holding the bundle of "swords" in the same pose as the father in the original.
+3. The swords are replaced by streams of glowing blue digital data: bundled cables, floating profile cards and fingerprints, held in the same position as the original blades.
+4. The grieving family on the right is an ordinary modern family (a mother, a child, a grandmother) with their faces lowered toward smartphones, lit by the screens, unaware of the pact being made beside them. Keep their body positions and the soft sorrowful mood of the original.
+5. On the stone floor, add a small, subtle line of text: "Accetto i termini e condizioni".
+
+Style: faithful to David's brushwork, palette (deep reds, ochres, dark browns) and chiaroscuro. Only the blue light of the data and the smartphone screens should break the period palette. Satirical political art, not photorealistic. Aspect ratio 4:3, matching the original.
+
+—
+
+Edit the image you just generated. Keep everything exactly as it is and add one element only:
+
+In the right arch of the background, in the dark shadows behind the group, add a small, distant figure of Ursula von der Leyen in a blazer, standing with her body half-turned away from the oath, head averted and eyes looking down and away, as if deliberately refusing to see what is happening. She should be smaller and less lit than the foreground figures, partly swallowed by the shadow, painted in the same neoclassical style and palette. Do not change the lighting, composition, text on the floor or any other figure.</pre>
+      </details>
+    </article>
+  </section>
+
+  <section class="step" data-img="new" data-mode="full">
+    <article class="card">
+      <p class="num">Il perché di questa scelta</p>
+      <h2>Perché gli Orazi</h2>
+      <p style="margin-top:16px">È uno dei dipinti più chiari nel trasmettere un messaggio politico, e la sua forza viene dalla <strong>composizione</strong>, che si può riutilizzare senza perdere efficacia.</p>
+      <p>Il tema mi riguarda: appartengo a una generazione che ha usato servizi digitali fin da piccola e ha sempre accettato le condizioni senza leggerle.</p>
+      <p>Ho inserito persone reali perché il potere sui dati <strong>ha dei nomi e delle aziende</strong>. L'intento è satirico, nella tradizione della satira politica: i personaggi sono scelti per il loro ruolo pubblico, non per la loro vita privata.</p>
+    </article>
+  </section>
+
+  <section class="step center tall" data-img="new" data-mode="hero">
+    <div class="overlay">
+      <p class="num">Conclusione</p>
+      <blockquote>Chi ha davvero giurato, e a chi stiamo consegnando le nostre <span class="data">spade</span>?</blockquote>
+      <p>David chiedeva di mettere il bene comune davanti agli interessi privati. Oggi è il privato di milioni di persone a essere messo al servizio di pochi poteri.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <em>Il giuramento dei dati</em> · rilettura de <em>Il giuramento degli Orazi</em> di J.-L. David (1784) · immagine generata con ChatGPT · opera satirica a scopo didattico
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
